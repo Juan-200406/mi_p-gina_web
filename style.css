@@ -1,0 +1,153 @@
+
+
+:root{
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --text-color: #f720af;
+    --icon-color: #323632;
+    --icon-menu-color: #707780;
+    --menu-color: #707780;
+
+    --text-selected-color: #355CC0;
+    --background-selected: #EBF00F;
+    --background-hover: #F7F9FA;
+
+     --border-color: #E6E9ED ;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+header{
+    z-index: 200; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+    padding: 0.45rem 0.45rom 2rem 1.27rem;
+    border-bottom: 1px solid var(--border-color);
+    padding: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+}
+.left{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+
+}
+.menu-container{
+
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    cursor: pointer;
+
+}
+.menu{
+    width: 1.5rem ;
+    height: 37% ;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu div{
+    width: 100% ;
+    height: 0.15rem;
+    background-color: var(--menu-color);
+} 
+.menu.menu-togle div:first.child{
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%,175%); 
+}
+.menu.menu-togle div:last-child{
+    width: 40%;
+    transform: rotate(35deg) translate(-30%, -160%);
+} 
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+.brand .logo{
+    width: 1.7rem;
+}
+.brand .name{
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-title-color);
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+.right a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: --background-color 0.2s ease ;
+
+}
+.right a:hover{
+    background-color: var(--background-hover);
+}
+.right img{
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+.right .user{
+    width: 2..5rem;
+    border-radius: 50%;
+
+}
+.sidebar{
+    margin-top: 4rem;
+    width: 4ren;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto ;
+    background-color: var(--background-color);
+}
+.sidebar .menu-togle{
+    width: 18.7remj;
+}
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem ;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem ;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+}
+.sidebar a.search{
+    padding: 1rem  0.7rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0.2rem;
+} 
+.sidebar a:hover{
+    background-color: var(--background-hover);
+}
+.sidebar img{
+    width: 1.6rem;
+}
