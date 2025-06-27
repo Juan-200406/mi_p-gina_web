@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.controls {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="url"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    min-width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#addImageBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+#addImageBtn:hover {
+    background-color: #218838;
+}
+
+#deleteImageBtn {
+    background-color: #dc3545;
+    color: white;
+}
+
+#deleteImageBtn:hover {
+    background-color: #c82333;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative; /* For animation */
+}
+
+.image-item img {
+    width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.image-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-item.selected {
+    border: 3px solid #007bff; /* Highlight color */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02); /* Slight scale for emphasis */
+}
+
+/* Animations (Optional) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.8); }
+}
+
+.image-item.entering {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.image-item.leaving {
+    animation: fadeOut 0.5s ease-out forwards;
+}
